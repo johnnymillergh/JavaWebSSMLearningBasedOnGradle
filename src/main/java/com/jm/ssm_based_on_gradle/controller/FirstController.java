@@ -16,9 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 public class FirstController implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        // Create ModelAndView object
         ModelAndView modelAndView = new ModelAndView();
+
+        // Add data to model
         modelAndView.addObject("msg", "This is my first Spring MVC program");
+
+        // Set logic view name
         modelAndView.setViewName("first.jsp");
+
         return modelAndView;
     }
 }
