@@ -1,7 +1,9 @@
 package com.jm.ssm_based_on_gradle.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,18 +15,16 @@ import javax.servlet.http.HttpServletResponse;
  * Time: 5:40 PM
  */
 
-public class FirstController implements Controller {
-    @Override
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        // Create ModelAndView object
-        ModelAndView modelAndView = new ModelAndView();
+@Controller
+@RequestMapping(value = "/hello")
+public class FirstController {
+
+    @RequestMapping(value = "/firstController")
+    public String handleRequest(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 
         // Add data to model
-        modelAndView.addObject("msg", "This is my first Spring MVC program");
+        model.addAttribute("msg", "This is my first Spring MVC program");
 
-        // Set logic view name
-        modelAndView.setViewName("first.jsp");
-
-        return modelAndView;
+        return "first";
     }
 }
