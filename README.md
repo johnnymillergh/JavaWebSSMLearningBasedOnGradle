@@ -22,7 +22,7 @@ I read the book ***Java EE Enterprise Application Development Tutorial*** (Java 
 
 Johnny Miller (鍾俊) – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
 
-Distributed under the MIT license. See [LICENSE](https://temp) for more information.
+Distributed under the MIT license. See [LICENSE](https://github.com/johnnymillergh/JavaWebSSMLearningBasedOnGradle/blob/master/LICENSE) for more information.
 
 ## Contributing
 
