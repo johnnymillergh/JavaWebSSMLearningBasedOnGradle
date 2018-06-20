@@ -51,4 +51,21 @@ public class UserController {
         System.out.println(password);
         return "success";
     }
+
+    @RequestMapping("/toUser")
+    public String toUser() {
+        return "user";
+    }
+
+    @RequestMapping("/deleteUser")
+    public String deleteUser(Integer[] ids) {
+        if (ids != null) {
+            for (Integer id : ids) {
+                System.out.println("Delete user: " + id);
+            }
+        } else {
+            System.out.println("ids = null");
+        }
+        return "success";
+    }
 }
