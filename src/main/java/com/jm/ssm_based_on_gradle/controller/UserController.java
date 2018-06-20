@@ -1,11 +1,13 @@
 package com.jm.ssm_based_on_gradle.controller;
 
 import com.jm.ssm_based_on_gradle.pojo.User;
+import com.jm.ssm_based_on_gradle.pojo.UserVo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * User: Johnny Miller
@@ -65,6 +67,22 @@ public class UserController {
             }
         } else {
             System.out.println("ids = null");
+        }
+        return "success";
+    }
+
+    @RequestMapping("/toUserEdit")
+    public String toUserEdit() {
+        return "user_edit";
+    }
+
+    @RequestMapping("/editUsers")
+    public String editUsers(UserVo userVo) {
+        List<User> users = userVo.getUsers();
+        for (User user : users) {
+            if (user.getId() != null) {
+                System.out.println("Edit user: " + user.getId() + ", username = " + user.getUsername());
+            }
         }
         return "success";
     }
